@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Twitter } from "lucide-react"
+import { Github, Linkedin, MessageSquare, Twitter } from "lucide-react"
 
 export function Footer() {
   return (
@@ -76,9 +76,9 @@ export function Footer() {
       </div>
 
       {/* Bottom legal bar */}
-      <div className="max-w-6xl mx-auto mt-8 text-sm relative z-10">
+      <div className="container mx-auto mt-8 text-sm relative z-10">
         {/* Top full-width bar with disclaimer */}
-        <div className="bg-black/5 text-black/70 py-3 px-4 text-center rounded-md">
+        <div className="bg-black/5 text-black/70 py-3 px-4 text-center">
           This is a fan-made website for educational purposes. Studio Ghibli and all related films are trademarks of Studio Ghibli Co., Ltd.
         </div>
 
@@ -86,22 +86,31 @@ export function Footer() {
         <div className="mt-4 pt-4 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex space-x-4">
             <a
-              href="https://github.com"
+              href="https://www.linkedin.com/in/andre-moura-tech"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black/70 hover:text-primary transition-colors"
+              className="text-black/70 hover:text-primary transition-colors rounded-full"
+            >
+              <Linkedin className="h-5 w-5" />
+              <span className="sr-only">Linkedin</span>
+            </a>
+            <a
+              href="https://github.com/andre-moura"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black/70 hover:text-primary transition-colors rounded-full"
             >
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </a>
-            <a
-              href="https://twitter.com"
+                        <a
+              href="https://t.me/PragmaticThoughts"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black/70 hover:text-primary transition-colors"
+              className="text-black/70 hover:text-primary transition-colors rounded-full"
             >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
+              <MessageSquare className="h-5 w-5" />
+              <span className="sr-only">Telegram</span>
             </a>
           </div>
           <p className="text-black/70">
