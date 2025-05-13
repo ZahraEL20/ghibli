@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 210 70% 77%;
+    --primary-foreground: 210 40% 30%;
+
+    --secondary: 120 15% 61%;
+    --secondary-foreground: 120 30% 25%;
+
+    --accent: 340 80% 89%;
+    --accent-foreground: 340 50% 40%;
+
+    --muted: 40 70% 85%;
+    --muted-foreground: 40 30% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 70% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 120 15% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 340 50% 65%;
+    --accent-foreground: 340 80% 98%;
+
+    --muted: 40 50% 60%;
+    --muted-foreground: 40 80% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.parallax-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+/* Watercolor effect for buttons */
+.btn-watercolor {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-watercolor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: inherit;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.btn-watercolor:hover::before {
+  transform: scale(1.5);
+}
+
+/* Floating animation */
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Wobble animation for cards */
+.wobble-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.wobble-on-hover:hover {
+  animation: wobble 1s ease-in-out;
+}
+
+@keyframes wobble {
+  0% {
+    transform: translateX(0%);
+  }
+  15% {
+    transform: translateX(-5%) rotate(-2deg);
+  }
+  30% {
+    transform: translateX(4%) rotate(2deg);
+  }
+  45% {
+    transform: translateX(-3%) rotate(-1deg);
+  }
+  60% {
+    transform: translateX(2%) rotate(1deg);
+  }
+  75% {
+    transform: translateX(-1%) rotate(-0.5deg);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Ghibli-specific custom classes */
+.ghibli-card {
+  @apply bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-white/20 transition-all duration-300 overflow-hidden;
+  box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2), 0 0 15px -5px rgba(0, 0, 0, 0.1);
+}
+
+.ghibli-card:hover {
+  @apply shadow-2xl;
+  transform: translateY(-5px);
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Totoro Easter Egg */
+.totoro-easter-egg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
